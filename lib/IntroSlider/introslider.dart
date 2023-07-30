@@ -53,7 +53,6 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
               await prefs.setBool('showslider', false);
               Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => LandingPage())); },
             child: Text('Take Off!', style: TextStyle(fontWeight: FontWeight.bold),),
-
             ),),),
             image: Center(child:Image.asset("assets/images/logo.png",width: 350,),),
             decoration: getDecoration(),
@@ -79,7 +78,6 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         ),
       ),
 
-
     ));
   }
 
@@ -95,6 +93,3 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
 
   gotoHome() => Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => LandingPage()));
 }
-
-    
-    
