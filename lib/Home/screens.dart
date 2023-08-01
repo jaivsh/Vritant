@@ -92,8 +92,15 @@ class GifCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final mediaquery = MediaQuery.of(context);
 
-    return Container(
-      color: Colors.blue[100],
+    return Material(elevation: 20,child: Container(
+      decoration: BoxDecoration(
+        color: Theme.of(context).colorScheme.background,
+          border: Border.all(
+
+          ),
+          borderRadius: BorderRadius.all(Radius.circular(20))
+      ),
+
       margin: const EdgeInsets.all(5),
       padding: const EdgeInsets.all(5),
       height: mediaquery.size.height * 0.5,
@@ -105,13 +112,14 @@ class GifCard extends StatelessWidget {
                 height: 120, width: 120, fit: BoxFit.fitWidth),
             Container(
               padding: const EdgeInsets.only(left: 5, right: 5),
-              decoration: const BoxDecoration(
-                  color: Colors.blue,
+              decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.secondary,
                   borderRadius: BorderRadius.all(Radius.circular(20))),
               child: TextButton(
-                child: const Text(
+                style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Theme.of(context).colorScheme.secondary)),
+                child: Text(
                   "Explore  Live →",
-                  style: TextStyle(color: Colors.white, fontSize: 16),
+                  style: TextStyle(fontSize: 16, color: Theme.of(context).colorScheme.inversePrimary),
                 ),
                 onPressed: () => _doSome(context, poem, uri),
               ),
@@ -119,6 +127,6 @@ class GifCard extends StatelessWidget {
           ],
         ),
       ),
-    );
+    ));
   }
 }
